@@ -90,9 +90,10 @@ void next(vector<int> filter, vector<string> guess_words, vector<vector<int>> co
     if(filter.size() == filter_next.size()) {
         next_guess = guess_words[filter[0]];
         result = compareWords(Mystery_Word, guess_words[filter[0]]);
+	filter_next.clear();
         for(int i=0; i < filter.size(); i++) {
             int x = filter[i];
-            if(comparisonMatrix[x][p] == result){
+            if(comparisonMatrix[x][filter[0]] == result){
                 filter_next.push_back(x);
             }
         }
